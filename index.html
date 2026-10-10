@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>தமிழ் குரல் கல்லூரி படிவம்</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">🎓 தமிழ் கல்லூரி</div>
+
+    <button class="voice-header" id="headerVoice"
+            type="button">
+        🎤 குரல் உதவி
+    </button>
+</header>
+
+<main>
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="tag">தமிழில் பேசுங்கள்</span>
+
+            <h1>
+                உங்கள் குரலிலேயே<br>
+                கல்லூரி படிவத்தை நிரப்புங்கள்!
+            </h1>
+
+            <p>
+                உங்களுக்குத் தேவையான விவரங்களைத் தமிழில்
+                பேசிச் சொல்லுங்கள். படிவத்தில் தகவல்களை
+                நிரப்ப உதவுகிறோம்.
+            </p>
+
+            <button class="primary-btn"
+                    id="openForm"
+                    type="button">
+                படிவத்தைத் திறக்கவும் →
+            </button>
+
+        </div>
+
+        <div class="hero-icon">
+            <div class="mic-circle">🎤</div>
+            <p>பேசுங்கள் • நிரப்புங்கள் • சமர்ப்பியுங்கள்</p>
+        </div>
+
+    </section>
+
+
+    <section class="form-section" id="formSection">
+
+        <div class="form-heading">
+
+            <span class="tag">மாணவர் சேர்க்கை</span>
+
+            <h2>கல்லூரி விண்ணப்பப் படிவம்</h2>
+
+            <p>
+                ஒவ்வொரு விவரத்திற்கும் அருகிலுள்ள
+                🎤 பொத்தானைத் தொட்டு தமிழில் பேசுங்கள்.
+            </p>
+
+        </div>
+
+
+        <div class="notice" id="status">
+            வணக்கம்! படிவத்தை நிரப்பத் தயாராகுங்கள்.
+        </div>
+
+
+        <form id="collegeForm">
+
+            <div class="form-grid">
+
+                <div class="field">
+                    <label for="studentName">
+                        மாணவர் பெயர் *
+                    </label>
+
+                    <div class="input-row">
+                        <input id="studentName"
+                               name="studentName"
+                               placeholder="உங்கள் பெயர்"
+                               required>
+
+                        <button type="button"
+                                class="mic-btn"
+                                data-target="studentName"
+                                aria-label="மாணவர் பெயரைப் பேசவும்">
+                            🎤
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="field">
+                    <label for="dob">பிறந்த தேதி *</label>
+
+                    <input id="dob"
+                           name="dob"
+                           type="date"
+                           required>
+                </div>
+
+
+                <div class="field">
+                    <label for="age">வயது *</label>
+
+                    <div class="input-row">
+                        <input id="age"
+                               name="age"
+                               type="number"
+                               min="1"
+                               max="100"
+                               placeholder="உங்கள் வயது"
+                               required>
+
+                        <button type="button"
+                                class="mic-btn"
+                                data-target="age"
+                                aria-label="வயதைப் பேசவும்">
+                            🎤
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="field">
+                    <label for="gender">பாலினம் *</label>
+
+                    <select id="gender"
+                            name="gender"
+                            required>
+
+                        <option value="">தேர்வு செய்யவும்</option>
+                        <option value="ஆண்">ஆண்</option>
+                        <option value="பெண்">பெண்</option>
+                        <option value="குறிப்பிட விரும்பவில்லை">
+                            குறிப்பிட விரும்பவில்லை
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <div class="field">
+                    <label for="phone">மொபைல் எண் *</label>
+
+                    <div class="input-row">
+                        <input id="phone"
+                               name="phone"
+                               type="tel"
+                               inputmode="numeric"
+                               maxlength="10"
+                               pattern="[0-9]{10}"
+                               placeholder="10 இலக்க எண்"
+                               required>
+
+                        <button type="button"
+                                class="mic-btn"
+                                data-target="phone"
+                                aria-label="மொபைல் எண்ணைப் பேசவும்">
+                            🎤
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="field">
+                    <label for="email">மின்னஞ்சல் முகவரி</label>
+
+                    <input id="email"
+                           name="email"
+                           type="email"
+                           placeholder="example@gmail.com">
+                </div>
+
+
+                <div class="field">
+                    <label for="college">கல்லூரிப் பெயர் *</label>
+
+                    <div class="input-row">
+                        <input id="college"
+                               name="college"
+                               placeholder="கல்லூரியின் பெயர்"
+                               required>
+
+                        <button type="button"
+                                class="mic-btn"
+                                data-target="college"
+                                aria-label="கல்லூரிப் பெயரைப் பேசவும்">
+                            🎤
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="field">
+                    <label for="course">படிப்பு *</label>
+
+                    <select id="course"
+                            name="course"
+                            required>
+
+                        <option value="">படிப்பைத் தேர்வு செய்யவும்</option>
+                        <option value="B.E.">B.E.</option>
+                        <option value="B.Tech">B.Tech</option>
+                        <option value="B.Sc.">B.Sc.</option>
+                        <option value="B.Com.">B.Com.</option>
+                        <option value="B.A.">B.A.</option>
+                        <option value="BCA">BCA</option>
+                        <option value="M.E.">M.E.</option>
+                        <option value="M.Sc.">M.Sc.</option>
+
+                    </select>
+                </div>
+
+
+                <div class="field">
+                    <label for="department">துறை *</label>
+
+                    <div class="input-row">
+                        <input id="department"
+                               name="department"
+                               placeholder="உதா: EEE"
+                               required>
+
+                        <button type="button"
+                                class="mic-btn"
+                                data-target="department"
+                                aria-label="துறையைப் பேசவும்">
+                            🎤
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="field">
+                    <label for="district">மாவட்டம் *</label>
+
+                    <div class="input-row">
+                        <input id="district"
+                               name="district"
+                               placeholder="உங்கள் மாவட்டம்"
+                               required>
+
+                        <button type="button"
+                                class="mic-btn"
+                                data-target="district"
+                                aria-label="மாவட்டத்தைப் பேசவும்">
+                            🎤
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="field full-width">
+                    <label for="address">முகவரி *</label>
+
+                    <div class="input-row">
+                        <textarea id="address"
+                                  name="address"
+                                  placeholder="உங்கள் முழு முகவரி"
+                                  required></textarea>
+
+                        <button type="button"
+                                class="mic-btn"
+                                data-target="address"
+                                aria-label="முகவரியைப் பேசவும்">
+                            🎤
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="field">
+                    <label for="marks">
+                        12-ஆம் வகுப்பு மதிப்பெண் (%)
+                    </label>
+
+                    <div class="input-row">
+                        <input id="marks"
+                               name="marks"
+                               type="number"
+                               min="0"
+                               max="100"
+                               step="0.01"
+                               placeholder="மதிப்பெண்">
+
+                        <button type="button"
+                                class="mic-btn"
+                                data-target="marks"
+                                aria-label="மதிப்பெண்ணைப் பேசவும்">
+                            🎤
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="voice-controls">
+
+                <button type="button"
+                        id="startVoice"
+                        class="secondary-btn">
+                    🎙️ முழுப் படிவத்தையும் குரலில் நிரப்பவும்
+                </button>
+
+                <button type="button"
+                        id="stopVoice"
+                        class="secondary-btn stop-btn">
+                    குரலை நிறுத்தவும்
+                </button>
+
+            </div>
+
+
+            <p class="hint">
+                குறிப்பு: மைக்கைப் பயன்படுத்தும்போது
+                browser கேட்கும் Microphone Permission-ஐ அனுமதிக்கவும்.
+                நிரப்பிய விவரங்களைச் சமர்ப்பிக்கும் முன் சரிபார்க்கவும்.
+            </p>
+
+
+            <button type="submit" class="submit-btn">
+                படிவத்தைச் சமர்ப்பிக்கவும் ✓
+            </button>
+
+            <button type="reset" class="reset-btn">
+                விவரங்களை அழிக்கவும்
+            </button>
+
+        </form>
+
+
+        <div id="result" class="result" aria-live="polite"></div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>© 2026 தமிழ் குரல் கல்லூரி படிவம்</p>
+</footer>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
